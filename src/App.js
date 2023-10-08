@@ -7,7 +7,7 @@ function App() {
  
   return (
     <div style={{ backgroundColor: 'white', height: '100vh', display: 'flex', justifyContent: 'center' }}>
-      <p>oke</p>
+      <p>non</p>
     </div>
   );
 }
