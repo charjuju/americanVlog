@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback, useMemo } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import tvJude from './TV Jude.png';
 import tvJudeFond from './TV Jude cheveux derier.png';
 import usbDown from './usb down.png';
