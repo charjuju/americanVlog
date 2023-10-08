@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/americanVlog/static/css/main.542f4747.css",
-    "main.js": "/americanVlog/static/js/main.54dadcb0.js",
+    "main.js": "/americanVlog/static/js/main.fba3248e.js",
     "static/js/787.c1a1f233.chunk.js": "/americanVlog/static/js/787.c1a1f233.chunk.js",
     "static/media/Le bouc.mp3": "/americanVlog/static/media/Le bouc.a8638e5df9d5e139d37d.mp3",
     "static/media/Papayou.mp3": "/americanVlog/static/media/Papayou.2320bfe7cb79af1f85d1.mp3",
@@ -14,11 +14,11 @@
     "static/media/usb down.png": "/americanVlog/static/media/usb down.c9a48602c7c2a6926987.png",
     "index.html": "/americanVlog/index.html",
     "main.542f4747.css.map": "/americanVlog/static/css/main.542f4747.css.map",
-    "main.54dadcb0.js.map": "/americanVlog/static/js/main.54dadcb0.js.map",
+    "main.fba3248e.js.map": "/americanVlog/static/js/main.fba3248e.js.map",
     "787.c1a1f233.chunk.js.map": "/americanVlog/static/js/787.c1a1f233.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.542f4747.css",
-    "static/js/main.54dadcb0.js"
+    "static/js/main.fba3248e.js"
   ]
 }
