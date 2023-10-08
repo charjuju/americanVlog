@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef} from 'react';
+import React, { useEffect, useState, useRef, useCallback, useMemo } from 'react';
 import tvJude from './TV Jude.png';
 import tvJudeFond from './TV Jude cheveux derier.png';
 import usbDown from './usb down.png';
@@ -49,17 +49,17 @@ function App() {
       setAudioPlaying(true);
     };
   
-  function playYe() {
-    console.log(chapitrePoited)
-    playAudio(allPist[chapitrePoited])
-  }
+    const playYe = useCallback(() => {
+      console.log(chapitrePoited);
+      playAudio(allPist[chapitrePoited]);
+    }, [chapitrePoited, playAudio, allPist]);
 
   useEffect(() => {
     if (reload === true) {
       setReload(false)
       playYe()
     }
-  }, [reload]);
+  }, [reload, playYe]);
 
   const handleButtonClickUsb = () => {
     playAudio(pistenoise)
