@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useRef, useCallback, useMemo} from 'react';
 import tvJude from './TV Jude.png';
 import tvJudeFond from './TV Jude cheveux derier.png';
 import usbDown from './usb down.png';
@@ -11,6 +11,7 @@ import bouttontop from './boutton/top.png';
 import bouttonleft from './boutton/left.png';
 import bouttonright from './boutton/right.png';
 import tvNoise from './tvNoise.jpg';
+import toP from './Theo.jpeg'
 import './App.css';
 
 
@@ -19,7 +20,7 @@ import piste2 from './pisteAudio/Papayou.mp3'
 import pistenoise from './pisteAudio/noise.mp3'
 
 function App() {
-  const allPist = [piste1, piste2]
+  const allPist = useMemo(() => [piste1, piste2], []);
   const styleUsb = { width: '8%', position: 'fixed', top: '40vw', left: '75%', zIndex: '1' };
   const mainAgripeuseStyle = { width: '20%', position: 'fixed', top: '37vw', left: '78%', zIndex: '1' };
   const [spinning, setSpinning] = useState(false);
@@ -35,19 +36,23 @@ function App() {
   const audioRef = useRef(null);
 
     // Fonction pour contrôler la lecture audio
-    const playAudio = (audioFile) => {
-      // Si l'audio est en cours de lecture, mettez en pause
-      if (audioPlaying) {
-        audioRef.current.pause();
-      }
-      
-      // Chargez et jouez la nouvelle piste audio
-      audioRef.current.src = audioFile;
-      audioRef.current.play();
-      
-      // Mettez à jour l'état de lecture audio
-      setAudioPlaying(true);
-    };
+    const playAudio = useCallback(
+      (audioFile) => {
+        // Si l'audio est en cours de lecture, mettez en pause
+        if (audioPlaying) {
+          audioRef.current.pause();
+        }
+        
+        // Chargez et jouez la nouvelle piste audio
+        audioRef.current.src = audioFile;
+        audioRef.current.play();
+        
+        // Mettez à jour l'état de lecture audio
+        setAudioPlaying(true);
+      },
+      [audioRef, audioPlaying] // Liste de dépendances mise à jour
+    );
+    
   
     const playYe = useCallback(() => {
       console.log(chapitrePoited);
@@ -84,7 +89,7 @@ function App() {
   };
 
   const chapitreList = [<div>
-    <img alt='mon foue' style={{width: '100%'}} src='Theo.jpeg'></img>
+    <img alt='mon foue' style={{width: '100%'}} src={toP}></img>
   </div>, <p>caca</p>]
 
   useEffect(() => {
